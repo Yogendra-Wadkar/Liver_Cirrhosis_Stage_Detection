@@ -47,7 +47,9 @@ The objective is to create a <b>real-time, efficient, and scalable pipeline</b> 
 <p>
 Liver cirrhosis is a progressive disease, and misjudging its stage can delay treatment or worsen outcomes. Our model supports faster triage and personalized treatment strategies by making sense of unstructured medical language. It’s a step toward more intelligent and accessible healthcare diagnostics powered by NLP.
 </p>
+<hr>
 
+<hr>
 <h2>🙏 Acknowledgement</h2>
 <p>
 Special thanks to <b>Unified Mentor</b> for providing the project guidance and dataset structure.<br>
