@@ -52,8 +52,9 @@ Liver cirrhosis is a progressive disease, and misjudging its stage can delay tre
 <h2>🙏 Acknowledgement</h2>
 <p>
 Special thanks to <b>Unified Mentor</b> for providing guidance and support throughout the development of this project.<br>
-This project serves as a practical learning implementation of <b>NLP-based intent classification</b>, <b>transformer models</b> like DistilBERT, and <b>healthcare-focused AI applications</b> in detecting stages of <b>liver cirrhosis</b> from medical text data.
+This project serves as a practical learning implementation of <b>machine learning</b> techniques, specifically focusing on <b>liver cirrhosis stage detection</b> through medical data analysis and classification.
 </p>
+
 
 
 <hr>
