@@ -5,7 +5,7 @@ This project aims to predict the stage of liver cirrhosis using a dataset contai
 
 ---
 
-## **Step 1: Import Libraries**
+## **📂Step 1: Import Libraries**
 In this step, we import the necessary libraries required for the project. These include libraries for data manipulation, machine learning, and model evaluation. The libraries we use are essential for tasks such as data preprocessing, training models, and visualizing results.
 
 ---
