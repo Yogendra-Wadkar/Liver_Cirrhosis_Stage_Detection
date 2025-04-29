@@ -49,7 +49,6 @@ Liver cirrhosis is a progressive disease, and misjudging its stage can delay tre
 </p>
 <hr>
 
-<hr>
 <h2>🙏 Acknowledgement</h2>
 <p>
 Special thanks to <b>Unified Mentor</b> for providing the project guidance and dataset structure.<br>
