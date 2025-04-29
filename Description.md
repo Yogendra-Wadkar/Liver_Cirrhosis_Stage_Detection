@@ -56,12 +56,12 @@ The Random Forest model was selected as the final model due to its superior perf
 
 ---
 
-### **Visualizations and Insights**:
+### **📊 Visualizations and Insights**:
 Throughout the project, various visualizations such as **correlation heatmaps**, **boxplots** for outlier detection, and **confusion matrices** were used to gain deeper insights into the data and evaluate the model's performance effectively.
 
 ---
 
-### **Future Work**:
+### **🚀 Future Work**:
 There are opportunities for further improving the model by exploring other advanced techniques, such as:
 - **Hyperparameter optimization** with more complex methods like **Grid Search**.
 - **Deep learning** models for more advanced prediction.
