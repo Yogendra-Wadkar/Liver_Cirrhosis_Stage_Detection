@@ -1,36 +1,36 @@
 # Liver Cirrhosis Stage Prediction Project 
 
-## **🧾Project Overview**
+## **🧾 Project Overview**
 This project aims to predict the stage of liver cirrhosis using a dataset containing various medical features. The goal is to train machine learning models to predict the disease's progression. After experimenting with several algorithms, the **Random Forest** model was chosen as the final model due to its effectiveness in handling complex data relationships.
 
 ---
 
-## **📂Step 1: Import Libraries**
+## **📂 Step 1: Import Libraries**
 In this step, we import the necessary libraries required for the project. These include libraries for data manipulation, machine learning, and model evaluation. The libraries we use are essential for tasks such as data preprocessing, training models, and visualizing results.
 
 ---
 
-## **📂Step 2: Data Gathering**
+## **📂 Step 2: Data Gathering**
 Here, the dataset is loaded from a CSV file into a DataFrame for further analysis. The dataset includes various features related to liver cirrhosis, and it's crucial to ensure that the data is clean and ready for the next steps.
 
 ---
 
-## **📂Step 3: Exploratory Data Analysis (EDA)**
+## **📂 Step 3: Exploratory Data Analysis (EDA)**
 In this step, we perform an initial exploration of the dataset. We examine the shape of the data, check for missing values, and generate a statistical summary. This helps in understanding the basic structure of the dataset. We also detect outliers using visualization techniques like boxplots and the Interquartile Range (IQR) method. Any outliers detected are handled appropriately to ensure they do not affect the model's performance.
 
 ---
 
-## **📂Step 4: Feature Engineering**
+## **📂 Step 4: Feature Engineering**
 This step focuses on transforming the data into a format suitable for machine learning models. We perform **Label Encoding** on categorical features, such as `Status`, `Drug`, `Sex`, etc., converting them into numerical values. Additionally, we analyze the target column (`Status`) for potential class imbalance, which is crucial for model performance.
 
 ---
 
-## **📂Step 5: Feature Selection**
+## **📂 Step 5: Feature Selection**
 Here, we analyze the correlation between different features using a correlation matrix. This allows us to identify any redundant features and avoid multicollinearity, which could negatively impact the performance of the model. We also calculate the **Variance Inflation Factor (VIF)** to further check for multicollinearity among features.
 
 ---
 
-## **📂Step 6: Model Training**
+## **📂 Step 6: Model Training**
 In this step, we split the dataset into training and testing sets. We train two machine learning models to predict the liver cirrhosis stage:
 
 1. **Logistic Regression**: We train and evaluate a Logistic Regression model to see how it performs on both the training and testing sets. We evaluate it using metrics such as accuracy, precision, recall, and confusion matrix.
@@ -39,12 +39,12 @@ In this step, we split the dataset into training and testing sets. We train two 
 
 ---
 
-## **📂Step 7: Model Saving and Prediction**
+## **📂 Step 7: Model Saving and Prediction**
 Once the model is trained and evaluated, we save it using **joblib** or **pickle** for future use. This saved model can be loaded later to make predictions on new data without retraining. For demonstration, the saved model is used to make predictions for the first few records in the dataset.
 
 ---
 
-## **✅Conclusion**
+## **✅ Conclusion**
 The **Random Forest model** outperformed the **Logistic Regression model**, achieving better performance on both training and testing sets. The reason for this is that Random Forest is capable of handling complex, non-linear relationships in the data and is more robust against overfitting.
 
 ### **Performance Metrics**:
