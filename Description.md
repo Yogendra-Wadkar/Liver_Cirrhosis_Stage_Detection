@@ -1,4 +1,4 @@
-# **Liver Cirrhosis Stage Prediction Project**
+# **Liver Cirrhosis Stage Prediction Project **
 
 ## **Project Overview**
 This project aims to predict the stage of liver cirrhosis using a dataset containing various medical features. The goal is to train machine learning models to predict the disease's progression. After experimenting with several algorithms, the **Random Forest** model was chosen as the final model due to its effectiveness in handling complex data relationships.
