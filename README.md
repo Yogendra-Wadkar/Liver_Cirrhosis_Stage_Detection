@@ -5,7 +5,7 @@
 ![Image](https://github.com/user-attachments/assets/027a77d0-c113-4191-a6a9-4254e49dba93)
 
 <p style="text-align: center;">
-<img src="https://cdn.pixabay.com/photo/2020/03/16/10/28/liver-4936970_960_720.jpg" alt="Liver Cirrhosis" width="60%">
+ 
 </p>
 
 <h2>📖 Introduction</h2>
