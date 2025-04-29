@@ -1,86 +1,86 @@
-<div style="background-color: #f9fcff; padding: 25px; border-radius: 10px; font-family: sans-serif;">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liver Cirrhosis Stage Prediction</title>
+</head>
+<body>
+    <h1>Liver Cirrhosis Stage Prediction</h1>
+    <p>This project aims to predict the stage of liver cirrhosis using a dataset containing various medical features. Several machine learning algorithms were experimented with, and after tuning hyperparameters, Random Forest was chosen as the final model due to its performance in handling complex relationships in the data.</p>
 
-<h2>🧾 Detailed Project Description</h2>
+    <h2>Step 1: Import Libraries</h2>
+    <p>We begin by importing necessary libraries:</p>
+    <ul>
+        <li>NumPy, Pandas for data handling</li>
+        <li>Matplotlib and Seaborn for data visualization</li>
+        <li>Scikit-learn for machine learning models, preprocessing, and evaluation metrics</li>
+        <li>Statsmodels for Variance Inflation Factor (VIF) calculation</li>
+        <li>Pickle for model saving and loading</li>
+    </ul>
 
-<p>
-This section provides an in-depth look at the entire process followed in the <b>Liver Cirrhosis Stage Detection</b> project — from understanding the data to fine-tuning a transformer model, evaluating its performance, and saving it for future deployment. The following steps outline each stage of development:
-</p>
+    <h2>Step 2: Data Gathering</h2>
+    <p>The dataset is read from a CSV file into a DataFrame:</p>
+    <pre><code>df = pd.read_csv(r"D:\Jupyter python\New Datasets\Unified Mentor\liver_cirrhosis_stage\liver_cirrhosis.csv")</code></pre>
 
-<hr>
+    <h2>Step 3: Exploratory Data Analysis (EDA)</h2>
+    <p>We explore the dataset by checking for null values, data types, and basic statistics:</p>
+    <ul>
+        <li>Shape of the dataset</li>
+        <li>Data types and missing values</li>
+        <li>Statistical summary</li>
+    </ul>
+    <p>Outliers are detected using boxplots and the Interquartile Range (IQR) method. The outliers are replaced with boundary values.</p>
 
-<h3>🧩 Step 1: Importing the Libraries & Setting Up the Environment</h3>
-<ul>
-  <li>Imported essential libraries including <code>transformers</code>, <code>torch</code>, <code>sklearn</code>, <code>pandas</code>, and <code>matplotlib</code>.</li>
-  <li>Checked GPU availability for faster training in environments like Google Colab.</li>
-  <li>Set random seeds using <code>set_seed()</code> for reproducibility.</li>
-</ul>
+    <h2>Step 4: Feature Engineering</h2>
+    <p>We perform label encoding for categorical features to convert them into numerical values:</p>
+    <ul>
+        <li>Status, Drug, Sex, Ascites, Hepatomegaly, Spiders, and Edema columns are encoded using a dictionary mapping.</li>
+    </ul>
+    <p>Additionally, we analyze the target column 'Status' which shows imbalance in the dataset.</p>
 
-<hr>
+    <h2>Step 5: Feature Selection</h2>
+    <p>We check for feature correlations using Pearson's coefficient and visualize the correlation matrix:</p>
+    <ul>
+        <li>The correlation matrix is plotted using Seaborn heatmaps.</li>
+    </ul>
+    <p>Variance Inflation Factor (VIF) is calculated to check for multicollinearity among features.</p>
 
-<h3>📂 Step 2: Loading and Exploring the Dataset</h3>
-<ul>
-  <li>Used a structured CSV file containing three columns: <code>Questions</code>, <code>Answer</code>, and <code>Intent</code>.</li>
-  <li>The <b>Intent</b> column contains medical categories like <code>early_stage</code>, <code>mid_stage</code>, and <code>end_stage</code> of liver cirrhosis.</li>
-  <li>Performed EDA using <code>value_counts()</code> to check class balance and cleaned the data if needed.</li>
-</ul>
+    <h2>Step 6: Model Training</h2>
+    <p>The dataset is split into training and testing sets using <code>train_test_split</code>. Two models are trained:</p>
+    <h3>1. Logistic Regression</h3>
+    <p>The Logistic Regression model is trained and evaluated on both training and testing sets. Evaluation metrics such as accuracy, confusion matrix, classification report, precision, and recall are calculated.</p>
+    
+    <h3>2. Random Forest</h3>
+    <p>The Random Forest Classifier is trained using the training set. The model is evaluated similarly to Logistic Regression. Precision and recall metrics are recorded. Hyperparameter tuning is done using RandomizedSearchCV, which significantly improves the model's performance.</p>
 
-<hr>
+    <h2>Step 7: Model Saving and Prediction</h2>
+    <p>The trained Random Forest model is saved using <code>joblib.dump</code> and can be loaded later for making predictions. Here, we load the saved model and make predictions for the first 5 records in the dataset.</p>
 
-<h3>🔠 Step 3: Data Preprocessing and Label Encoding</h3>
-<ul>
-  <li>Mapped unique intents to numeric labels using <code>LabelEncoder</code>.</li>
-  <li>Split the dataset into <b>training</b>, <b>validation</b>, and <b>testing</b> sets using <code>train_test_split</code>.</li>
-  <li>This helped ensure the model could generalize well across unseen medical text.</li>
-</ul>
-
-<hr>
-
-<h3>📚 Step 4: Tokenization Using DistilBERT Tokenizer</h3>
-<ul>
-  <li>Loaded the <b>DistilBERT tokenizer</b> from Hugging Face’s <code>transformers</code> library.</li>
-  <li>Tokenized the medical text using <code>batch_encode_plus()</code> with padding, truncation, and attention masks.</li>
-  <li>Converted the encoded input into PyTorch tensors and created <code>DataLoader</code> objects for batching.</li>
-</ul>
-
-<hr>
-
-<h3>🧠 Step 5: Model Initialization and Configuration</h3>
-<ul>
-  <li>Initialized a pre-trained <code>DistilBertForSequenceClassification</code> model.</li>
-  <li>Modified the output layer to match the number of medical intent classes.</li>
-  <li>Defined optimizer (<code>AdamW</code>) and learning rate scheduler for training stability.</li>
-</ul>
-
-<hr>
-
-<h3>🏋️ Step 6: Model Training and Validation</h3>
-<ul>
-  <li>Ran training for several epochs using a defined training loop.</li>
-  <li>Each epoch included forward pass, backward pass, and loss calculation.</li>
-  <li>After each epoch, model was evaluated on validation set to monitor overfitting and accuracy.</li>
-  <li>Metrics such as <code>training_loss</code> and <code>validation_accuracy</code> were plotted and logged.</li>
-</ul>
-
-<hr>
-
-<h3>📈 Step 7: Testing, Evaluation, and Model Saving</h3>
-<ul>
-  <li>Evaluated the final model on the <b>test set</b> using <code>accuracy_score</code>, <code>classification_report</code>, and <code>confusion_matrix</code>.</li>
-  <li>Visualized class-wise performance using <b>heatmaps</b> and bar charts for better interpretability.</li>
-  <li>Used Python’s <code>pickle</code> library to save the trained model and tokenizer for future inference.</li>
-</ul>
-
-<hr>
-
-<h2>✅ Conclusion</h2>
-<p>
-This project successfully demonstrates how <b>state-of-the-art NLP techniques</b> like transformers can be applied in the medical domain to classify liver cirrhosis stages from clinical language or symptom-based input. From data preprocessing to fine-tuning DistilBERT, every step contributes to a scalable and intelligent solution that could potentially assist doctors or power chatbot-based triage systems.
-</p>
-
-<p>
-With an accuracy-driven approach and modular pipeline, this project is a strong demonstration of applying machine learning to solve real-world healthcare problems.
-</p>
-
-<h2 style="text-align: center;">🏥 AI meets Healthcare — Automating Liver Diagnosis, One Text at a Time!</h2>
-
-</div>
+    <h2>Conclusion</h2>
+    <p>The Random Forest model with hyperparameter tuning resulted in the best performance with the following metrics:</p>
+    <table border="1">
+        <tr>
+            <th>Metric</th>
+            <th>Training (%)</th>
+            <th>Testing (%)</th>
+        </tr>
+        <tr>
+            <td>Accuracy</td>
+            <td>93.98</td>
+            <td>91.99</td>
+        </tr>
+        <tr>
+            <td>Precision</td>
+            <td>94.10</td>
+            <td>92.07</td>
+        </tr>
+        <tr>
+            <td>Recall</td>
+            <td>93.98</td>
+            <td>91.98</td>
+        </tr>
+    </table>
+    <p>The reason Random Forest was preferred over Logistic Regression is its ability to capture complex relationships in the data and its robustness against overfitting. Hyperparameter tuning further optimized its performance.</p>
+</body>
+</html>
