@@ -38,7 +38,7 @@ The objective is to create a <b>real-time, efficient, and scalable pipeline</b> 
   <li><b>Transformers (Hugging Face)</b> – For NLP modeling (DistilBERT)</li>
   <li><b>Scikit-learn</b> – For label encoding, metrics</li>
   <li><b>Pandas & NumPy</b> – Data processing</li>
-  <li><b>Google Colab / Jupyter</b> – Development environment</li>
+  <li><b>Jupyter Notebook </b> – Development environment</li>
 </ul>
 
 <hr>
